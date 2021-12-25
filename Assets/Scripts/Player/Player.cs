@@ -5,6 +5,7 @@ using Assets.Scripts.Input;
 using UnityEngine;
 [RequireComponent(typeof(PlayerMover))]
 [RequireComponent(typeof(PlayerEffects))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour, IDamagable, IHealth
 {
     private int _maxHealth;
@@ -14,16 +15,16 @@ public class Player : MonoBehaviour, IDamagable, IHealth
 
     private PlayerMover _playerMover;
     private PlayerEffects _playerEffects;
+    private Rigidbody2D _rigidbody;
 
     public event Action OnDie; 
     public event Action<int, int> OnHealthChanged;
 
-    public void Init(int maxHealth, PlayerMover playerMover, PlayerEffects playerEffects)
+    public void Init(int maxHealth, float speed)
     {
         _maxHealth = maxHealth;
 
-        _playerMover = playerMover;
-        _playerEffects = playerEffects;
+        _playerMover.Init(speed, _rigidbody);
     }
 
     private void Start()
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour, IDamagable, IHealth
     {
         _playerMover = GetComponent<PlayerMover>();
         _playerEffects = GetComponent<PlayerEffects>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
 }

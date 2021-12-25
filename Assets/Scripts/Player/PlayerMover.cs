@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private Rigidbody2D _rigidbody;
+    [SerializeField] private Rigidbody2D _rigidbody;
     public void Init(float speed, Rigidbody2D rigidbody)
     {
         _speed = speed;

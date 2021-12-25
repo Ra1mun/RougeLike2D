@@ -53,17 +53,20 @@
     <UnityVersion>2020.1.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Input\MouseInput.cs" />
-    <Compile Include="Assets\Scripts\Input\MoblieInput.cs" />
     <Compile Include="Assets\Scripts\Input\IInput.cs" />
+    <Compile Include="Assets\Scripts\Input\MoblieInput.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
-    <Compile Include="Assets\Scripts\PlayerProperty.cs" />
-    <Compile Include="Assets\Scripts\Installer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEffects.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerDecorator.cs" />
-    <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
+    <Compile Include="Assets\Scripts\Input\MouseInput.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Health\IHealth.cs" />
+    <Compile Include="Assets\Scripts\Installer.cs" />
+    <Compile Include="Assets\Scripts\Spawner\Property\PlayerPropertyIniter.cs" />
+    <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
+    <Compile Include="Assets\Scripts\Spawner\PlayerFactory.cs" />
+    <Compile Include="Assets\Scripts\Exstensions\ListExstension.cs" />
+    <Compile Include="Assets\Scripts\Spawner\PlayerSpawner.cs" />
+    <Compile Include="Assets\Scripts\Spawner\Property\UnitProperty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
