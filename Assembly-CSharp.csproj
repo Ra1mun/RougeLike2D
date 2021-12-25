@@ -53,20 +53,23 @@
     <UnityVersion>2020.1.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Input\IInput.cs" />
-    <Compile Include="Assets\Scripts\Input\MoblieInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\IInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\MoblieInput.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEffects.cs" />
-    <Compile Include="Assets\Scripts\Input\MouseInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\MouseInput.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Health\IHealth.cs" />
     <Compile Include="Assets\Scripts\Installer.cs" />
     <Compile Include="Assets\Scripts\Spawner\Property\PlayerPropertyIniter.cs" />
     <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
     <Compile Include="Assets\Scripts\Spawner\PlayerFactory.cs" />
-    <Compile Include="Assets\Scripts\Exstensions\ListExstension.cs" />
+    <Compile Include="Assets\Scripts\Extension\ListExstension.cs" />
     <Compile Include="Assets\Scripts\Spawner\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\Spawner\Property\UnitProperty.cs" />
+    <Compile Include="Assets\Scripts\Detection\PlayerMoverDecorator.cs" />
+    <Compile Include="Assets\Scripts\GestureClick.cs" />
+    <Compile Include="Assets\Scripts\Handler\ClickToWorldHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -260,6 +263,21 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.17f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -689,6 +707,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{1952DFCC-1442-6E25-228D-26BFE8C24C72}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
+      <Project>{967C844C-A344-FE8F-F38F-8CD3BCD32763}</Project>
+      <Name>Zenject-ReflectionBaking-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
+      <Project>{8D94004D-E9B1-B213-8843-C4A867F2C0C6}</Project>
+      <Name>Zenject-PoolMonitor-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject.csproj">
+      <Project>{32158176-B7BA-49A7-F6EE-80DAC7231FBD}</Project>
+      <Name>Zenject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -1,11 +1,12 @@
-﻿using Assets.Scripts.Player;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Assets.Scripts.Player;
 using UnityEngine;
 
 public class PlayerFactory : MonoBehaviour
 {
-    [SerializeField] private List<Player> _players;
     [SerializeField] private PlayerPropertyIniter _playerPropertyIniter;
+    [SerializeField] private List<Player> _players;
+
     public Player Spawn()
     {
         var player = Instantiate(_players.RandomItem());

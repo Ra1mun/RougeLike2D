@@ -1,11 +1,9 @@
-﻿using Assets.Scripts.Input;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerPropertyIniter : MonoBehaviour
 {
-    [SerializeField] private UnitProperty _playerProperty;
-
     private Player _player;
+    [SerializeField] private UnitProperty _playerProperty;
 
     public void Init(Player player)
     {
