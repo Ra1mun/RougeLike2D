@@ -1,12 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using Zenject;
 
-public class MouseInput : MonoBehaviour, IInput
+public class MouseClick : IClick, ITickable
 {
     private const int LeftMouseButton = 0;
-    public event Action<Vector2> OnClicked;
 
-    private void Update()
+    public event Action<Vector3> OnClicked;
+
+    public void Tick()
     {
         if (Input.GetMouseButtonDown(LeftMouseButton)) OnClicked?.Invoke(Input.mousePosition);
     }

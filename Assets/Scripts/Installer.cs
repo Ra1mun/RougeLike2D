@@ -1,40 +1,55 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Zenject;
 
 public class Installer : MonoInstaller
 {
-    [SerializeField] private PlayerSpawner _playerSpawner;
+
+    [SerializeField] private Player _player;
+    [SerializeField] private PlayerMovement _playerMovement;
+
     public override void InstallBindings()
     {
-        BindPlayerHandler();
         BindInstances();
+        BindPlayerIntaractHandler();
         BindInput();
         BindDetection();
-    }
-
-    private void BindPlayerHandler()
-    {
-        Container.BindInterfacesAndSelfTo<ClickToWorldHandler>().FromNew().AsSingle();
+        BindGeneral();
     }
 
     private void BindInstances()
     {
-        Container.Bind<PlayerSpawner>().FromInstance(_playerSpawner).AsSingle();
+        Container.Bind<Player>().FromInstance(_player).AsSingle();
+        Container.Bind<PlayerMovement>().FromInstance(_playerMovement).AsSingle();
+    }
+
+    private void BindPlayerIntaractHandler()
+    {
+        Container.BindInterfacesAndSelfTo<IconChooseHandler>().FromNew().AsSingle();
+        Container.BindInterfacesAndSelfTo<MovementHandler>().FromNew().AsSingle();
+    }
+
+    private void BindDetection()
+    {
+        Container.BindInterfacesAndSelfTo<ClickDecorator>().FromNew().AsSingle();
     }
 
     private void BindInput()
     {
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
-            Container.BindInterfacesAndSelfTo<MoblieInput>().FromNew().AsSingle();
+            Container.BindInterfacesAndSelfTo<MoblieClick>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MoblieInput>().AsSingle();
         }
         else
         {
-            Container.BindInterfacesAndSelfTo<MouseInput>().FromNew().AsSingle();
+            Container.BindInterfacesAndSelfTo<MouseClick>().AsSingle();
+            Container.BindInterfacesAndSelfTo<KeyboardInput>().AsSingle();
         }
     }
-    private void BindDetection()
+
+    private void BindGeneral()
     {
-        Container.BindInterfacesAndSelfTo<PlayerMoverDecorator>().FromNew().AsSingle();
+        Container.Bind<Camera>().FromInstance(Camera.main).AsSingle();
     }
 }

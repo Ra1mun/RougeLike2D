@@ -53,23 +53,29 @@
     <UnityVersion>2020.1.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Detection\Input\IInput.cs" />
-    <Compile Include="Assets\Scripts\Detection\Input\MoblieInput.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Click\IClick.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EnemyFactory.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Click\MoblieClick.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEffects.cs" />
-    <Compile Include="Assets\Scripts\Detection\Input\MouseInput.cs" />
+    <Compile Include="Assets\Scripts\Extension\ListExstension.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Click\MouseClick.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Property\UnitProperty.cs" />
+    <Compile Include="Assets\Scripts\Detection\ClickDecorator.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Health\IHealth.cs" />
     <Compile Include="Assets\Scripts\Installer.cs" />
-    <Compile Include="Assets\Scripts\Spawner\Property\PlayerPropertyIniter.cs" />
+    <Compile Include="Assets\Scripts\Handler\IconChooseHandler.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerPropertyIniter.cs" />
     <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
-    <Compile Include="Assets\Scripts\Spawner\PlayerFactory.cs" />
-    <Compile Include="Assets\Scripts\Extension\ListExstension.cs" />
-    <Compile Include="Assets\Scripts\Spawner\PlayerSpawner.cs" />
-    <Compile Include="Assets\Scripts\Spawner\Property\UnitProperty.cs" />
-    <Compile Include="Assets\Scripts\Detection\PlayerMoverDecorator.cs" />
-    <Compile Include="Assets\Scripts\GestureClick.cs" />
-    <Compile Include="Assets\Scripts\Handler\ClickToWorldHandler.cs" />
+    <Compile Include="Assets\Scripts\Icon.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Input\IInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Input\KeyboardInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Input\MoblieInput.cs" />
+    <Compile Include="Assets\Scripts\Handler\MovementHandler.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EnemyPropertyIniter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -261,23 +267,23 @@
     <Reference Include="UnityEditor">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.17f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="Zenject-usage">
-      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.17f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

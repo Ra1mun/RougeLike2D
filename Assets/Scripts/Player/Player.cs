@@ -1,18 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMover))]
+[RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerEffects))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour, IDamagable, IHealth
 {
     private int _currentHealth;
     private int _maxHealth;
+
     private PlayerEffects _playerEffects;
+    private PlayerMovement _playerMovement;
 
-    private PlayerMover _playerMover;
-    private Rigidbody2D _rigidbody;
-
+    public event Action OnDie;
+    public event Action<int, int> OnHealthChanged;
+        
     public void ApplyDamage(int damage)
     {
         _currentHealth -= damage;
@@ -22,20 +24,18 @@ public class Player : MonoBehaviour, IDamagable, IHealth
         if (!IsAlive()) OnDie?.Invoke();
     }
 
-    public event Action<int, int> OnHealthChanged;
 
     private bool IsAlive()
     {
         return _currentHealth < 0;
     }
 
-    public event Action OnDie;
 
     public void Init(int maxHealth, float speed)
     {
         _maxHealth = maxHealth;
 
-        _playerMover.Init(speed, _rigidbody);
+        _playerMovement.Init(speed);
     }
 
     private void Start()
@@ -51,8 +51,7 @@ public class Player : MonoBehaviour, IDamagable, IHealth
 
     private void Awake()
     {
-        _playerMover = GetComponent<PlayerMover>();
+        _playerMovement = GetComponent<PlayerMovement>();
         _playerEffects = GetComponent<PlayerEffects>();
-        _rigidbody = GetComponent<Rigidbody2D>();
     }
 }
