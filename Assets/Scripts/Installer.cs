@@ -26,7 +26,7 @@ public class Installer : MonoInstaller
     private void BindPlayerIntaractHandler()
     {
         Container.BindInterfacesAndSelfTo<IconChooseHandler>().FromNew().AsSingle();
-        Container.BindInterfacesAndSelfTo<MovementHandler>().FromNew().AsSingle();
+        Container.BindInterfacesAndSelfTo<PlayerMovementDecorator>().FromNew().AsSingle();
     }
 
     private void BindDetection()

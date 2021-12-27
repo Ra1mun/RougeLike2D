@@ -53,29 +53,44 @@
     <UnityVersion>2020.1.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Icon.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\SpeachlessBehavior.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Click\IClick.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\FreeMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\TradeBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\DontMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Citizens\ArmoryDealerNPC.cs" />
+    <Compile Include="Assets\Scripts\Citizen\CitizenPropertyIniter.cs" />
     <Compile Include="Assets\Scripts\Spawner\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Click\MoblieClick.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Trade\ITradable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEffects.cs" />
     <Compile Include="Assets\Scripts\Extension\ListExstension.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Click\MouseClick.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Property\UnitProperty.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\PatrolMoveBehavior.cs" />
     <Compile Include="Assets\Scripts\Detection\ClickDecorator.cs" />
+    <Compile Include="Assets\Scripts\Property\NPCProperty.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Move\IMovable.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Citizen\CitizenSystem\ExchangeSystem.cs" />
+    <Compile Include="Assets\Scripts\Spawner\EnemyPropertyIniter.cs" />
     <Compile Include="Assets\Scripts\Spawner\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Health\IHealth.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\SimpleDialogBehavior.cs" />
     <Compile Include="Assets\Scripts\Installer.cs" />
     <Compile Include="Assets\Scripts\Handler\IconChooseHandler.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerPropertyIniter.cs" />
-    <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
-    <Compile Include="Assets\Scripts\Icon.cs" />
-    <Compile Include="Assets\Scripts\Detection\Input\Input\IInput.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Input\KeyboardInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\Input\Input\IInput.cs" />
+    <Compile Include="Assets\Scripts\Detection\PlayerMovementDecorator.cs" />
+    <Compile Include="Assets\Scripts\Citizen\CitizenSystem\DialogSystem.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Input\MoblieInput.cs" />
-    <Compile Include="Assets\Scripts\Handler\MovementHandler.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Spawner\EnemyPropertyIniter.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Citizen.cs" />
+    <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Speak\ISpeakable.cs" />
+    <Compile Include="Assets\Scripts\Property\PlayerProperty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

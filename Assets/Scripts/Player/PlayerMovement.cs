@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using Zenject;
+
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IInitializable
 {
-    [SerializeField] private float _speed;
+    private float _speed;
     [SerializeField] private Rigidbody2D _rigidbody;
 
     public void Init(float speed)
@@ -10,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
         _speed = speed;
     }
 
-    private void Awake()
+    public void Initialize()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -19,4 +21,5 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody.MovePosition(_rigidbody.position + direction * (_speed * Time.deltaTime));
     }
+
 }

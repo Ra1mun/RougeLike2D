@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class MovementHandler : IInitializable, IDisposable
+public class PlayerMovementDecorator : IInitializable, IDisposable
 {
     private readonly IInput _input;
     private readonly PlayerMovement _playerMovement;
     private readonly Player _player;
 
-    public MovementHandler(IInput input, PlayerMovement playerMovement, Player player)
+    public PlayerMovementDecorator(IInput input, PlayerMovement playerMovement, Player player)
     {
         _input = input;
         _playerMovement = playerMovement;
