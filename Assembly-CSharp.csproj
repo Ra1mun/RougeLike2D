@@ -54,11 +54,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Icon.cs" />
-    <Compile Include="Assets\Scripts\Citizen\Strategy\SpeachlessBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\Speak\SpeachlessBehavior.cs" />
+    <Compile Include="Assets\Scripts\Property\PlayerProperty.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Click\IClick.cs" />
-    <Compile Include="Assets\Scripts\Citizen\Strategy\FreeMoveBehavior.cs" />
-    <Compile Include="Assets\Scripts\Citizen\Strategy\TradeBehavior.cs" />
-    <Compile Include="Assets\Scripts\Citizen\Strategy\DontMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\Move\FreeMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\Trade\TradeBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\Move\DontMoveBehavior.cs" />
     <Compile Include="Assets\Scripts\Citizen\Citizens\ArmoryDealerNPC.cs" />
     <Compile Include="Assets\Scripts\Citizen\CitizenPropertyIniter.cs" />
     <Compile Include="Assets\Scripts\Spawner\EnemyFactory.cs" />
@@ -67,10 +68,11 @@
     <Compile Include="Assets\Scripts\Citizen\Trade\ITradable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEffects.cs" />
     <Compile Include="Assets\Scripts\Extension\ListExstension.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInteract.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Click\MouseClick.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Property\UnitProperty.cs" />
-    <Compile Include="Assets\Scripts\Citizen\Strategy\PatrolMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\Move\PatrolMoveBehavior.cs" />
     <Compile Include="Assets\Scripts\Detection\ClickDecorator.cs" />
     <Compile Include="Assets\Scripts\Property\NPCProperty.cs" />
     <Compile Include="Assets\Scripts\Citizen\Move\IMovable.cs" />
@@ -79,7 +81,7 @@
     <Compile Include="Assets\Scripts\Spawner\EnemyPropertyIniter.cs" />
     <Compile Include="Assets\Scripts\Spawner\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Health\IHealth.cs" />
-    <Compile Include="Assets\Scripts\Citizen\Strategy\SimpleDialogBehavior.cs" />
+    <Compile Include="Assets\Scripts\Citizen\Strategy\Speak\SimpleDialogBehavior.cs" />
     <Compile Include="Assets\Scripts\Installer.cs" />
     <Compile Include="Assets\Scripts\Handler\IconChooseHandler.cs" />
     <Compile Include="Assets\Scripts\Detection\Input\Input\KeyboardInput.cs" />
@@ -90,7 +92,7 @@
     <Compile Include="Assets\Scripts\Citizen\Citizen.cs" />
     <Compile Include="Assets\Scripts\Damage\IDamagable.cs" />
     <Compile Include="Assets\Scripts\Citizen\Speak\ISpeakable.cs" />
-    <Compile Include="Assets\Scripts\Property\PlayerProperty.cs" />
+    <Compile Include="Assets\Scripts\Handler\InteractWithNPCHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

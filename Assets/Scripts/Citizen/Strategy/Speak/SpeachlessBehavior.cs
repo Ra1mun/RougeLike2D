@@ -7,6 +7,6 @@ public class SpeachlessBehavior : ISpeakable
 {
     public void Speak()
     {
-        //Do nothing
+        Debug.Log("I can't speak");
     }
 }

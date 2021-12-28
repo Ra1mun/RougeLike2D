@@ -1,4 +1,4 @@
 ﻿public interface ITradable
 {
-    void Trade();
+    void Trade(Player player);
 }

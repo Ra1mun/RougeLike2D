@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.InteropServices.ComTypes;
+using UnityEngine;
 
 public class ArmoryDealerNPC : Citizen
 {
@@ -6,12 +7,12 @@ public class ArmoryDealerNPC : Citizen
     protected override void InitBehaviours()
     {
         _tradable = new TradeBehavior();
-        _speakable = new SimpleDialogBehavior("E", new DialogSystem());
+        _speakable = new SimpleDialogBehavior("E", _dialogSystem);
         _movable = new DontMoveBehavior();
     }
 
     private void Awake()
     {
-        
+        InitBehaviours();
     }
 }

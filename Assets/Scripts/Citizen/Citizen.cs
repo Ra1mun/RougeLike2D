@@ -12,9 +12,9 @@ public abstract class Citizen : MonoBehaviour
 
     protected abstract void InitBehaviours();
 
-    public void Trade()
+    public void Trade(Player player)
     {
-        _tradable.Trade();
+        _tradable.Trade(player);
     }
 
     public void Speak()

@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
-using Zenject;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour, IInitializable
+public class PlayerMovement : MonoBehaviour
 {
     private float _speed;
-    [SerializeField] private Rigidbody2D _rigidbody;
+    private Rigidbody2D _rigidbody;
 
     public void Init(float speed)
     {
         _speed = speed;
     }
 
-    public void Initialize()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
